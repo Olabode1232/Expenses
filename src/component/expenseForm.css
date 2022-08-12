@@ -1,0 +1,32 @@
+.formHolder {
+    background-color: #a892ee;
+    padding: 10px;
+    margin: 10px auto;
+    text-align: center;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: 20px;
+    /* color: red; */
+  }
+  .formTitle {
+    align-items: stretch;
+  }
+  input {
+    width: 220px;
+    border-radius: 10px;
+    border: none;
+    margin: 5px;
+    outline: none;
+  }
+  
+  .formAction button {
+    font: inherit;
+    cursor: pointer;
+    padding: 5px 9px;
+    border: 1px solid #40005d;
+    background-color: #40005d;
+    color: white;
+    border-radius: 10px;
+  }
+  
