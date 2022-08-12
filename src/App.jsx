@@ -3,9 +3,11 @@ import ExpenseItem from "../src/component/expenseItem"
 // import "./ExpenseApp.css"
 import "../src/component/expenseApp.css"
 import ExpenseNew from "../src/component/expenseNew";
+import ExpenseFilter from "../src/component/expenseFilter"
 
 
 function ExpenseApp() {
+  
   const expenses = [
     {
       id: 1,
@@ -32,11 +34,20 @@ function ExpenseApp() {
       price: 666.99,
     },
   ];
+  const addExpenseHandler = ExpenseNew => {
+    console.log("In App Js")
+    console.log(ExpenseNew  )
+  }
+  const [filterYear, setFilterYear] = React.useState('2020');
+  const filterChangeHandler = selectedYear => {
+    setFilterYear(selectedYear)
+  }
 
   return (
     <div className="app">
       {/* <h1>Let's get Started!</h1> */}
-      <ExpenseNew/>
+      <ExpenseNew onAddExpenseNew={addExpenseHandler}/>
+      <ExpenseFilter selected={filterYear} onChangeFilter={filterChangeHandler}/> 
       <div className="overall">
         <ExpenseItem
           title={expenses[0].title}

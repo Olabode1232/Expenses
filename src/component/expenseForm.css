@@ -16,9 +16,9 @@
   input {
     width: 220px;
     border-radius: 10px;
-    /* border: none; */
+    border: none;
     margin: 5px;
-    /* outline: none; */
+    outline: none;
   }
   
   .formAction button {

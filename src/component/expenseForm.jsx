@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import "../component/expenseForm.css"
 
 
-function ExpenseForm() {
+function ExpenseForm(props) {
   //  function inputChange(event) {
   //    console.log(event.target.value)
   //  }
@@ -46,7 +46,7 @@ function ExpenseForm() {
       amount: userInput.amount,
       date: new Date(userInput.date),
     };
-    console.log(expenseData);
+    props.onSaveExpenseForm(expenseData)
    setUserInput(
     {
       title: "",
