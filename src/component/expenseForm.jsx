@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import "./ExpenseForm.css";
+// import "./ExpenseForm.css";
+import "../component/expenseForm.css"
+
 
 function ExpenseForm() {
   //  function inputChange(event) {

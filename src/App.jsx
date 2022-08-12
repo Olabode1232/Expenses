@@ -1,34 +1,74 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import React, { Component } from "react";
+import ExpenseItem from "../src/component/expenseItem"
+// import "./ExpenseApp.css"
+import "../src/component/expenseApp.css"
+import ExpenseNew from "../src/component/expenseNew";
 
-function App() {
-  const [count, setCount] = useState(0)
+
+function ExpenseApp() {
+  const expenses = [
+    {
+      id: 1,
+      title: "Car insurance",
+      date: new Date(2022, 7, 5),
+      price: 999.99,
+    },
+    {
+      id: 2,
+      title: "Life insurance",
+      date: new Date(2022, 7, 5),
+      price: 888.99,
+    },
+    {
+      id: 3,
+      title: "Fire insurance",
+      date: new Date(2022, 7, 5),
+      price: 777.99,
+    },
+    {
+      id: 4,
+      title: "House insurance",
+      date: new Date(2022, 7, 5),
+      price: 666.99,
+    },
+  ];
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app">
+      {/* <h1>Let's get Started!</h1> */}
+      <ExpenseNew/>
+      <div className="overall">
+        <ExpenseItem
+          title={expenses[0].title}
+          date={expenses[0].date.toISOString()}
+          price={expenses[0].price}
+          className="overall__child"
+        />
+        <ExpenseItem
+          title={expenses[1].title}
+          date={expenses[1].date.toISOString()}
+          price={expenses[1].price}
+          className="overall__child"
+
+        />
+        <ExpenseItem
+          title={expenses[2].title}
+          date={expenses[2].date.toISOString()}
+          price={expenses[2].price}
+          className="overall__child"
+
+        />
+        <ExpenseItem
+          title={expenses[3].title}
+          date={expenses[3].date.toISOString()}
+          price={expenses[3].price}
+          className="overall__child"
+
+         
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
-  )
+  );
 }
 
-export default App
+export default ExpenseApp;

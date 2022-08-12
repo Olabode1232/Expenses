@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import "./ExpenseDate.css";
+// import "./ExpenseDate.css";
+import "../component/expenseDate.css"
+
 
 function ExpenseDate(props) {
   const date = new Date();

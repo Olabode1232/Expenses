@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import "./ExpenseNew.css";
-import ExpenseForm from "./ExpenseForm";
+// import "./ExpenseNew.css";
+import "../component/expenseNew.css"
+import ExpenseForm from "../component/expenseForm";
 
 function ExpenseNew() {
   return (
