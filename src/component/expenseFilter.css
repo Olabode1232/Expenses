@@ -1,0 +1,22 @@
+.expenseFilterChild{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.labelFilter{
+    font-weight: bolder;
+    font-size: 25px;
+    color: steelblue;
+}
+select{
+    width: 100px;
+    height: 35px;
+    /* border: 2px solid rgb(218, 147, 218); */
+    border: 2px solid steelblue;
+    border-radius: 10px;
+    outline: none;
+}
+option{
+    text-align: center;
+    align-items: center;
+}

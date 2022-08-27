@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 // import "./ExpenseForm.css";
-import "../component/expenseForm.css"
-
+import "../component/expenseForm.css";
 
 function ExpenseForm(props) {
   //  function inputChange(event) {
@@ -10,7 +9,7 @@ function ExpenseForm(props) {
 
   const [userInput, setUserInput] = React.useState({
     title: "",
-    amount: "",
+    price: "",
     date: "",
   });
   // console.log(userInput)
@@ -26,7 +25,7 @@ function ExpenseForm(props) {
     setUserInput((prevState) => {
       return {
         ...prevState,
-        amount: event.target.value,
+        price: event.target.value,
       };
     });
   }
@@ -43,17 +42,15 @@ function ExpenseForm(props) {
 
     const expenseData = {
       title: userInput.title,
-      amount: userInput.amount,
-      date: new Date(userInput.date),
+      price: userInput.price,
+      date: userInput.date,
     };
-    props.onSaveExpenseForm(expenseData)
-   setUserInput(
-    {
+    props.onSaveExpenseForm(expenseData);
+    setUserInput({
       title: "",
-      amount: "",
+      price: "",
       date: "",
-    }
-   )
+    });
   }
 
   return (
@@ -61,33 +58,19 @@ function ExpenseForm(props) {
       <form onSubmit={submitForm}>
         <div className="formTitle">
           <label>Title</label>
-          <input  
-            type="text"
-            onChange={titleChanger} 
-            value={userInput.title}
-             />
+          <input type="text" onChange={titleChanger} value={userInput.title} />
         </div>
         <div className="formTitle">
-          <label>Number</label>
+          <label>Amount</label>
           <input
             type="number"
-            min="0.01"
-            max="100"
             onChange={amountChanger}
-            value={userInput.amount}
-            
+            value={userInput.price}
           />
         </div>
         <div className="formTitle">
           <label>Date</label>
-          <input
-            type="Date"
-            min="2019-01-01"
-            max="2023-12-31"
-            onChange={dateChanger}
-            value={userInput.date}
-           
-          />
+          <input type="Date" onChange={dateChanger} value={userInput.date} />
         </div>
         <div className="formAction">
           <button>Add Expense</button>
