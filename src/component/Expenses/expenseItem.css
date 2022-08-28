@@ -1,0 +1,32 @@
+.expenseItem{
+  background-color: #8a8282;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  border-radius: 12px;
+
+}
+.expenseItemDesription{
+ display: flex;
+ align-items: center;
+ color: white;
+ /* flex-direction: column; */
+ /* flex-flow: column-reverse; */
+ gap: 200px;
+}
+.expenseItemPrice{
+    background-color: purple;
+    border: 2px solid white;
+    border-radius: 12px;
+    font-size: 25px;
+    font-weight: bolder;
+    margin: 5px;
+    padding: 2px;
+}
+.change{
+  background-color: fuchsia;
+  font-size: 15px ;
+  border-radius: 5px;
+}

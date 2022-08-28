@@ -1,93 +1,41 @@
 import React, { Component } from "react";
-import ExpenseItem from "../src/component/expenseItem";
-// import "./ExpenseApp.css"
-import "../src/component/expenseApp.css";
-import ExpenseNew from "../src/component/expenseNew";
-import ExpenseFilter from "../src/component/expenseFilter";
-
-
+import Expense from "./component/Expenses/expense";
+import "../src/App.css";
 
 function ExpenseApp() {
-  const DummyExpenses = [
+  const expenses = [
     {
-      id: 1,
-      title: "Car insurance",
-      date: new Date(2022, 7, 5),
-      price: 999.99,
+      id: "e1",
+      title: "Car Insurance",
+      amount: 299.99,
+      date: new Date(2020, 4, 24),
     },
     {
-      id: 2,   
-      title: "Life insurance",
-      date: new Date(2022, 7, 5),
-      price: 888.99,
+      id: "e2",
+      title: "Fire Insurance",
+      amount: 388.99,
+      date: new Date(2021, 5, 25),
     },
     {
-      id: 3,
-      title: "Fire insurance",
-      date: new Date(2022, 7, 5),
-      price: 777.99,
+      id: "e3",
+      title: "Life Insurance",
+      amount: 477.99,
+      date: new Date(2022, 6, 26),
     },
     {
-      id: 4,
-      title: "House insurance", 
-      date: new Date(2022, 7, 5),
-      price: 666.99,
+      id: "e4",
+      title: "Mar Insurance",
+      amount: 566.99,
+      date: new Date(2023, 7, 27),
     },
   ];
-const [expenses, setExpenses] = React.useState(DummyExpenses)
-
-  const addExpenseHandler = expenseNew => {
-      setExpenses(prevExpenses => {
-        return[expenseNew, ...prevExpenses]
-      });
-  }; 
-  const [filterYear, setFilterYear] = React.useState("2020");
-  const filterChangeHandler = (selectedYear) => {
-    setFilterYear(selectedYear);
-  };
-
   return (
-    <div className="app">
-      {/* <h1>Let's get Started!</h1> */}
-      <ExpenseNew onAddExpenseNew={addExpenseHandler} />
-      <ExpenseFilter    
-        selected={filterYear} 
-        onChangeFilter={filterChangeHandler}
-      /> 
-      {expenses.map((expense) => (
-        <ExpenseItem
-          key={expense.id}
-          title={expense.title}
-          price={expense.price}
-          date={expense.date}
-        />
-      ))}
-      {/* <div className="overall">
-        <ExpenseItem
-          title={expenses[0].title}
-          date={expenses[0].date.toISOString()}
-          price={expenses[0].price}
-          className="overall__child"
-        />
-        <ExpenseItem
-          title={expenses[1].title}
-          date={expenses[1].date.toISOString()}
-          price={expenses[1].price}
-          className="overall__child"
-        />
-        <ExpenseItem
-          title={expenses[2].title}
-          date={expenses[2].date.toISOString()}
-          price={expenses[2].price}
-          className="overall__child"
-        />
-        <ExpenseItem
-          title={expenses[3].title}
-          date={expenses[3].date.toISOString()}
-          price={expenses[3].price}
-          className="overall__child"
-        />
-      </div> */}
+    <div className="container-fluid">
+      <h1 className="text-center  frontPage ">
+        Getting Started With Expenses Tracker
+      </h1>
+
+      <Expense item={expenses} />
     </div>
   );
 }
