@@ -1,11 +1,36 @@
-import React, { Component } from 'react';
-import ExpenseItem from "./expenseItem"
-
+import React, { Component } from "react";
+import Expensefilter from "../expenseFilter";
+import ExpenseItem from "./expenseItem";
 
 function Expense(props) {
-  
-    return<div className="bg-dark rounded-5 ">
-        <ExpenseItem
+  const [filteredYear, setFilteredYear] = React.useState("2020");
+
+  const filterHandler = selectedYear => {
+    setFilteredYear(selectedYear);
+  };
+
+  const filteredExpenses = props.item.filter(expense => {
+    return expense.date.getFullYear().toString() === filteredYear
+  })
+
+  return (
+    <div className="bg-dark rounded-5 w-full ">
+      <Expensefilter selected={filteredYear} onChangeFilter={filterHandler} />
+        
+        {filteredExpenses.length === 0 ? (<p>No expenses found</p>) : (
+          filteredExpenses.map((expense) => {
+            return (
+              <ExpenseItem
+                key={expense.id}
+                title={expense.title}
+                amount={expense.amount}
+                date={expense.date}
+              />
+            );
+          })
+        )}
+      
+      {/* <ExpenseItem
         title={props.item[0].title}
         amount={props.item[0].amount}
         date={props.item[0].date}
@@ -24,8 +49,9 @@ function Expense(props) {
         title={props.item[3].title}
         amount={props.item[3].amount}
         date={props.item[3].date}
-      />
+      /> */}
     </div>
+  );
 }
 
-export default Expense
+export default Expense;

@@ -14,10 +14,11 @@
     align-items: stretch;
   }
   input {
+
     width: 220px;
     border-radius: 10px;
     border: none;
-    margin: 5px;
+    margin: 20px;
     outline: none;
   }
   
@@ -32,7 +33,11 @@
   button{
     /* background-color: red; */
     border: 2px solid #40005d;
-    
+  }
 
+  .formH{
+    margin: 10PX;
+    margin-left: auto;
+    margin-right: auto;
   }
   
